@@ -1,39 +1,48 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Student Task Manager</title>
+    <link rel="stylesheet" href="{% static 'tasks/style.css' %}">
 </head>
 <body>
-    <h1>Student Task Manager</h1>
+    <!-- <h1>Student Task Manager</h1> -->
 
     <a href="/add/">Add New Task</a>
 
     <h2>My Tasks</h2>
 
     {% if tasks %}
-        <ul>
-            {% for task in tasks %}
-                <li>
-                    <strong>{{ task.title }}</strong><br>
-
-                    {{ task.description }}<br>
-
-                    Status:
-                    {% if task.completed %}
-                        Completed
-                    {% else %}
-                        Pending
-
+        <div class="container">
+            <ul>
+                <h1>Student Task Manager</h1>
+                {% for task in tasks %}
+                    <li class="task">
+                        <strong>{{ task.title }}</strong><br>
+                    
+                        {{ task.description }}<br>
+                    
+                        <span class="status {% if task.completed %}completed{% else %}pending{% endif %}">
+                            Status:
+                            {% if task.completed %}
+                                Completed
+                            {% else %}
+                                Pending
+                            {% endif %}
+                        </span>
+                    
+                        {% if not task.completed %}
+                            <br>
+                            <a href="{% url 'complete_task' task.id %}">Complete Task</a>
+                        {% endif %}
+                    
                         <br>
-                        <a href="{% url 'complete_task' task.id %}">Complete Task</a>
-                    {% endif %}
-                </li>
-                <br>
-
-                Created:
-                {{ task.created_at|date:"M d, Y H:i" }}
-            {% endfor %}
-        </ul>
+                        Created: {{ task.created_at|date:"M d, Y H:i" }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     {% else %}
         <p>No tasks have been added yet.</p>
     {% endif %}

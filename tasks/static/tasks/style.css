@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.task {
+    border: 1px solid #ddd;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 8px;
+    line-height: 1.8;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.pending {
+    color: #b36b00;
+}
+
+.completed {
+    color: #218739;
+}
+
+a,
+button {
+    display: inline-block;
+    padding: 9px 14px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a {
+    background-color: #333;
+    color: white;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
