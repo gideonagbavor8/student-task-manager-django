@@ -16,7 +16,7 @@ http://127.0.0.1:8000/
 
 The purpose of this software is to strengthen my skills in developing web applications with Python and Django. The project gave me practical experience with Django models, forms, views, URL routing, templates, user input, and database operations using SQLite.
 
-[Software Demo Video](VIDEO_LINK_WILL_BE_ADDED)
+[Software Demo Video](https://vimeo.com/1226081100)
 
 # Web Pages
 
