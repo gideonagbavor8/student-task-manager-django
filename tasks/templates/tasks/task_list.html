@@ -6,7 +6,7 @@
 <body>
     <h1>Student Task Manager</h1>
 
-    <a href="{% url 'add_task' %}">Add New Task</a>
+    <a href="/add/">Add New Task</a>
 
     <h2>My Tasks</h2>
 
@@ -14,9 +14,24 @@
         <ul>
             {% for task in tasks %}
                 <li>
-                    <strong>{{ task.title }}</strong>
-                    <p>{{ task.description }}</p>
+                    <strong>{{ task.title }}</strong><br>
+
+                    {{ task.description }}<br>
+
+                    Status:
+                    {% if task.completed %}
+                        Completed
+                    {% else %}
+                        Pending
+
+                        <br>
+                        <a href="{% url 'complete_task' task.id %}">Complete Task</a>
+                    {% endif %}
                 </li>
+                <br>
+
+                Created:
+                {{ task.created_at|date:"M d, Y H:i" }}
             {% endfor %}
         </ul>
     {% else %}
